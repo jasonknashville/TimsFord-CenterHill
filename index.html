@@ -391,7 +391,7 @@
     color: #1a2a50;
   }
 
-  /* SIDE BY SIDE TABLE */
+  /* SIDE BY SIDE TABLE — scoped to light context */
   .compare-table-wrap {
     overflow-x: auto;
     margin-top: 1.5rem;
@@ -399,13 +399,13 @@
     border: 1px solid var(--border);
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
-  table {
+  .compare-table-wrap table {
     width: 100%;
     border-collapse: collapse;
     background: var(--card-bg);
     font-size: 0.875rem;
   }
-  thead th {
+  .compare-table-wrap thead th {
     background: var(--dark);
     color: #fff;
     font-family: 'DM Mono', monospace;
@@ -416,14 +416,13 @@
     text-align: left;
     font-weight: 500;
   }
-  thead th:first-child { border-radius: 0; }
-  thead th.chl-head { background: var(--accent-chl); }
-  thead th.tfl-head { background: var(--accent-tfl); }
-  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
-  tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: rgba(0,0,0,0.02); }
-  tbody td { padding: 0.8rem 1.1rem; vertical-align: top; line-height: 1.5; }
-  tbody td:first-child { font-weight: 600; font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+  .compare-table-wrap thead th.chl-head { background: var(--accent-chl); }
+  .compare-table-wrap thead th.tfl-head { background: var(--accent-tfl); }
+  .compare-table-wrap tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  .compare-table-wrap tbody tr:last-child { border-bottom: none; }
+  .compare-table-wrap tbody tr:hover { background: rgba(0,0,0,0.02); }
+  .compare-table-wrap tbody td { padding: 0.8rem 1.1rem; vertical-align: top; line-height: 1.5; color: var(--text); }
+  .compare-table-wrap tbody td:first-child { font-weight: 600; font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
   .check { color: #1e6b3c; font-weight: 700; }
   .warn { color: #c07000; font-weight: 700; }
   .check-arr { color: #1e6b3c; }
@@ -467,9 +466,10 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 0.8rem;
+    background: #111;
   }
   .data-table thead th {
-    background: rgba(255,255,255,0.06);
+    background: #1e1e1e;
     color: rgba(255,255,255,0.55);
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem;
@@ -481,14 +481,15 @@
     white-space: nowrap;
   }
   .data-table thead th:first-child { text-align: left; }
-  .data-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .data-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); background: #111; }
   .data-table tbody tr:last-child { border-bottom: none; }
-  .data-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+  .data-table tbody tr:hover { background: #1a1a1a; }
   .data-table tbody td {
     padding: 0.5rem 0.75rem;
     color: rgba(255,255,255,0.85);
     text-align: right;
     white-space: nowrap;
+    background: transparent;
   }
   .data-table tbody td:first-child { text-align: left; font-weight: 700; color: rgba(255,255,255,0.95); }
 
@@ -532,10 +533,10 @@
   .h2h-table thead th.chl-head { color: #6fd98a; }
   .h2h-table thead th.tfl-head { color: #6aa6f5; }
   .h2h-table thead th.diff-head { color: #f0c050; }
-  .h2h-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.12s; }
+  .h2h-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.12s; background: #111; }
   .h2h-table tbody tr:last-child { border-bottom: none; }
   .h2h-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-  .h2h-table tbody td { padding: 0.7rem 1rem; color: rgba(255,255,255,0.85); text-align: right; }
+  .h2h-table tbody td { padding: 0.7rem 1rem; color: rgba(255,255,255,0.85); text-align: right; background: transparent; }
   .h2h-table tbody td:first-child { text-align: left; font-weight: 700; font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); }
   .h2h-table tbody td.chl-val { color: #6fd98a; font-weight: 600; }
   .h2h-table tbody td.tfl-val { color: #6aa6f5; font-weight: 600; }
